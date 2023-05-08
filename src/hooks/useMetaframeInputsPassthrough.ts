@@ -26,7 +26,7 @@ export const useMetaframeInputsPassthrough: () => void = () => {
         // then display them in the UI
         Object.entries(inputs).forEach(([key, value]) => {
           const size: number | undefined = options.showSizes
-            ? value === null
+            ? value === null || value === undefined
               ? 0
               : typeof value === "string"
               ? (value as string).length
